@@ -7,7 +7,8 @@ import CategroyCell from 'src/components/Categroy/CategroyCell'
 const HomePage = () => {
 
   return (
-    <>
+    <div id='homePage'>
+      <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
 
       <NavBar/>
       <Header/>
@@ -128,7 +129,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
