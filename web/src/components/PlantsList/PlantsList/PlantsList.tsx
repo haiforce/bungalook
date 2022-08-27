@@ -15,7 +15,7 @@ const PlantsList = ({ collection }: { collection: Collection }) => {
             </div>
             <div className="text-center p-4">
               <Link
-                to={routes.plantDetail({id:item.id})}
+                to={routes.plantDetail({id:String(item.id)})}
               ><a className="d-block h5 mb-2">{item.name}</a></Link>
               <span className="text-primary me-1">${item.price}</span>
               <span className="text-body text-decoration-line-through">$19.0</span>
