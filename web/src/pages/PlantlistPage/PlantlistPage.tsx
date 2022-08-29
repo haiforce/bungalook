@@ -1,15 +1,14 @@
-import {Link, routes} from '@redwoodjs/router'
-import {MetaTags} from '@redwoodjs/web'
 import PlantsListCell from 'src/components/PlantsList/PlantsListCell'
+import StyleSheetTag from 'src/components/StyleSheetTag/StyleSheetTag'
 
 type PlantlistPageProps = {
   id: string
 }
 
-const PlantlistPage = ({id} : PlantlistPageProps) => {
+const PlantlistPage = ({ id }: PlantlistPageProps) => {
   return (
     <>
-      <link href="/css/bootstrapproduct.min.css" rel="stylesheet"/>
+      <StyleSheetTag type='plantList'/>
       <div className="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div className="container">
           <h1 className="display-3 mb-3 animated slideInDown">Plants</h1>
@@ -24,7 +23,7 @@ const PlantlistPage = ({id} : PlantlistPageProps) => {
         </div>
       </div>
 
-      <PlantsListCell id={Number(id)}/>
+      <PlantsListCell id={Number(id)} />
 
 
 
