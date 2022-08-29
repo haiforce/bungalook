@@ -16,6 +16,7 @@ import CollectionsLayout from 'src/layouts/CollectionsLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/plant-detail/{id}" page={PlantDetailPage} name="plantDetail" />
       <Route path="/plantlist/{id}" page={PlantlistPage} name="plantlist" />
       <Set wrap={PlantsLayout}>
         <Route path="/plants/new" page={PlantNewPlantPage} name="newPlant" />

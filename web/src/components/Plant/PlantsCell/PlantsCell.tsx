@@ -6,7 +6,7 @@ import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 import Plants from 'src/components/Plant/Plants'
 
 export const QUERY = gql`
-  query FindPlants {
+  query FindPlantsList {
     plants {
       id
       name
