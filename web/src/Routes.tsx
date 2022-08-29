@@ -9,9 +9,8 @@
 
 import { Set, Router, Route } from '@redwoodjs/router'
 
-import PlantsLayout from 'src/layouts/PlantsLayout'
-
 import CollectionsLayout from 'src/layouts/CollectionsLayout'
+import PlantsLayout from 'src/layouts/PlantsLayout'
 
 const Routes = () => {
   return (

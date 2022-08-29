@@ -1,15 +1,14 @@
-import NavBar from 'src/components/NavBar/NavBar'
+import CategroyCell from 'src/components/Categroy/CategroyCell'
 import Header from 'src/components/Header/Header'
 import Home from 'src/components/Home/Home'
+import NavBar from 'src/components/NavBar/NavBar'
 import Service from 'src/components/Service/Service'
-import CategroyCell from 'src/components/Categroy/CategroyCell'
 import StyleSheetTag from 'src/components/StyleSheetTag/StyleSheetTag'
 
 const HomePage = () => {
-
   return (
-    <div id='homePage'>
-      <StyleSheetTag type='homePage' />
+    <div id="homePage">
+      <StyleSheetTag type="homePage" />
       <NavBar />
       <Header />
       <Home />
@@ -27,19 +26,39 @@ const HomePage = () => {
               <div className="col-md-10 col-md-offset-1">
                 <div id="testimonial" className="owl-carousel owl-theme">
                   <div className="item">
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at duis sed dapibus leo nec ornare diam."</p>
+                    <p>
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Duis sed dapibus leo nec ornare diam. Sed commodo nibh
+                      ante facilisis bibendum dolor feugiat at duis sed dapibus
+                      leo nec ornare diam."
+                    </p>
                     <p>- John DOE, Parker County, TX</p>
                   </div>
                   <div className="item">
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at duis sed dapibus leo nec ornare diam."</p>
+                    <p>
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Duis sed dapibus leo nec ornare diam. Sed commodo nibh
+                      ante facilisis bibendum dolor feugiat at duis sed dapibus
+                      leo nec ornare diam."
+                    </p>
                     <p>- Jenny DOE, Parker County, TX</p>
                   </div>
                   <div className="item">
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at duis sed dapibus leo nec ornare diam."</p>
+                    <p>
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Duis sed dapibus leo nec ornare diam. Sed commodo nibh
+                      ante facilisis bibendum dolor feugiat at duis sed dapibus
+                      leo nec ornare diam."
+                    </p>
                     <p>- John DOE, Parker County, TX</p>
                   </div>
                   <div className="item">
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at duis sed dapibus leo nec ornare diam."</p>
+                    <p>
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Duis sed dapibus leo nec ornare diam. Sed commodo nibh
+                      ante facilisis bibendum dolor feugiat at duis sed dapibus
+                      leo nec ornare diam."
+                    </p>
                     <p>- John DOE, Parker County, TX</p>
                   </div>
                 </div>
@@ -54,7 +73,10 @@ const HomePage = () => {
           <div className="section-title text-center">
             <h2>Contact Us</h2>
             <hr />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
+              dapibus leonec.
+            </p>
           </div>
           <div className="col-md-10 col-md-offset-1 contact-info">
             <div className="col-md-4">
@@ -88,26 +110,44 @@ const HomePage = () => {
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-group">
-                    <input type="text" id="name" className="form-control" placeholder="Name" required />
+                    <input
+                      type="text"
+                      id="name"
+                      className="form-control"
+                      placeholder="Name"
+                      required
+                    />
                     <p className="help-block text-danger"></p>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="form-group">
-                    <input type="email" id="email" className="form-control" placeholder="Email" required />
+                    <input
+                      type="email"
+                      id="email"
+                      className="form-control"
+                      placeholder="Email"
+                      required
+                    />
                     <p className="help-block text-danger"></p>
                   </div>
                 </div>
               </div>
               <div className="form-group">
-                <textarea name="message" id="message" className="form-control"
+                <textarea
+                  name="message"
+                  id="message"
+                  className="form-control"
                   rows={4}
                   placeholder="Message"
-                  required></textarea>
+                  required
+                ></textarea>
                 <p className="help-block text-danger"></p>
               </div>
               <div id="success"></div>
-              <button type="submit" className="btn btn-custom btn-lg">Send Message</button>
+              <button type="submit" className="btn btn-custom btn-lg">
+                Send Message
+              </button>
             </form>
           </div>
         </div>
@@ -118,18 +158,32 @@ const HomePage = () => {
           <div className="col-md-8 col-md-offset-2">
             <div className="social">
               <ul>
-                <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
+                <li>
+                  <a href="#">
+                    <i className="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa fa-google-plus"></i>
+                  </a>
+                </li>
               </ul>
             </div>
-            <p>&copy; 2016 Landscaper. Designed by
-              <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a>
+            <p>
+              &copy; 2016 Landscaper. Designed by
+              <a href="http://www.templatewire.com" rel="nofollow">
+                TemplateWire
+              </a>
             </p>
           </div>
         </div>
       </div>
-
     </div>
   )
 }

@@ -66,17 +66,21 @@ const Collection = ({ collection }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Collection {collection.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Collection {collection.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{collection.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name</th>
               <td>{collection.name}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(collection.createdAt)}</td>
             </tr>

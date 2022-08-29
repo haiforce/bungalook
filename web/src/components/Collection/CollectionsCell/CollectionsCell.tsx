@@ -21,10 +21,7 @@ export const Empty = () => {
   return (
     <div className="rw-text-center">
       {'No collections yet. '}
-      <Link
-        to={routes.newCollection()}
-        className="rw-link"
-      >
+      <Link to={routes.newCollection()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>

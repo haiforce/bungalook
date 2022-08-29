@@ -66,35 +66,45 @@ const Plant = ({ plant }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Plant {plant.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Plant {plant.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{plant.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name</th>
               <td>{plant.name}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Description</th>
               <td>{plant.description}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Price</th>
               <td>{plant.price}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Media</th>
               <td>{jsonDisplay(plant.media)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Collection id</th>
               <td>{plant.collectionId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Information</th>
               <td>{jsonDisplay(plant.information)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Tag</th>
               <td>{plant.tag}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(plant.createdAt)}</td>
             </tr>

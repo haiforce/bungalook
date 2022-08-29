@@ -22,6 +22,8 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error.message}</div>
 )
 
-export const Success = ({ collection }: CellSuccessProps<FindCollectionById>) => {
+export const Success = ({
+  collection,
+}: CellSuccessProps<FindCollectionById>) => {
   return <Collection collection={collection} />
 }
