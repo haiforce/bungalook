@@ -13,15 +13,18 @@ const CREATE_COLLECTION_MUTATION = gql`
 `
 
 const NewCollection = () => {
-  const [createCollection, { loading, error }] = useMutation(CREATE_COLLECTION_MUTATION, {
-    onCompleted: () => {
-      toast.success('Collection created')
-      navigate(routes.collections())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createCollection, { loading, error }] = useMutation(
+    CREATE_COLLECTION_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Collection created')
+        navigate(routes.collections())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createCollection({ variables: { input } })

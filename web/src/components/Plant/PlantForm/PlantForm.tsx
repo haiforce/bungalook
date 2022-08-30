@@ -9,33 +9,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
-
 const PlantForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.plant?.id)
   }
 
@@ -48,7 +23,7 @@ const PlantForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="name"
           className="rw-label"
@@ -56,15 +31,14 @@ const PlantForm = (props) => {
         >
           Name
         </Label>
-        
-          <TextField
-            name="name"
-            defaultValue={props.plant?.name}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name"
+          defaultValue={props.plant?.name}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name" className="rw-field-error" />
 
@@ -75,15 +49,14 @@ const PlantForm = (props) => {
         >
           Description
         </Label>
-        
-          <TextField
-            name="description"
-            defaultValue={props.plant?.description}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="description"
+          defaultValue={props.plant?.description}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="description" className="rw-field-error" />
 
@@ -94,15 +67,14 @@ const PlantForm = (props) => {
         >
           Price
         </Label>
-        
-          <TextField
-            name="price"
-            defaultValue={props.plant?.price}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ valueAsNumber: true, required: true }}
-          />
-        
+
+        <TextField
+          name="price"
+          defaultValue={props.plant?.price}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ valueAsNumber: true, required: true }}
+        />
 
         <FieldError name="price" className="rw-field-error" />
 
@@ -113,15 +85,14 @@ const PlantForm = (props) => {
         >
           Media
         </Label>
-        
-          <TextAreaField
-            name="media"
-            defaultValue={JSON.stringify(props.plant?.media)}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ valueAsJSON: true, required: true }}
-          />
-        
+
+        <TextAreaField
+          name="media"
+          defaultValue={JSON.stringify(props.plant?.media)}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ valueAsJSON: true, required: true }}
+        />
 
         <FieldError name="media" className="rw-field-error" />
 
@@ -132,15 +103,14 @@ const PlantForm = (props) => {
         >
           Collection id
         </Label>
-        
-          <NumberField
-            name="collectionId"
-            defaultValue={props.plant?.collectionId}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="collectionId"
+          defaultValue={props.plant?.collectionId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="collectionId" className="rw-field-error" />
 
@@ -151,15 +121,14 @@ const PlantForm = (props) => {
         >
           Information
         </Label>
-        
-          <TextAreaField
-            name="information"
-            defaultValue={JSON.stringify(props.plant?.information)}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ valueAsJSON: true, required: true }}
-          />
-        
+
+        <TextAreaField
+          name="information"
+          defaultValue={JSON.stringify(props.plant?.information)}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ valueAsJSON: true, required: true }}
+        />
 
         <FieldError name="information" className="rw-field-error" />
 
@@ -170,23 +139,19 @@ const PlantForm = (props) => {
         >
           Tag
         </Label>
-        
-          <TextField
-            name="tag"
-            defaultValue={props.plant?.tag}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="tag"
+          defaultValue={props.plant?.tag}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="tag" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

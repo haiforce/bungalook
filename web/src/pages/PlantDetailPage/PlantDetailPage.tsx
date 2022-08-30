@@ -14,14 +14,15 @@ const PlantDetailPage = ({ id }: PlantDetailPageProps) => {
 
       <h1>PlantDetailPage</h1>
       <p>
-        Find me in <code>./web/src/pages/PlantDetailPage/PlantDetailPage.tsx</code>
+        Find me in{' '}
+        <code>./web/src/pages/PlantDetailPage/PlantDetailPage.tsx</code>
       </p>
       <p>
         My default route is named <code>plantDetail</code>, link to me with `
         <Link to={routes.plantDetail({ id: '42' })}>PlantDetail 42</Link>`
       </p>
       <p>The parameter passed to me is {id}</p>
-      <PlantDetailCell id={Number(id)}/>
+      <PlantDetailCell id={Number(id)} />
     </>
   )
 }
