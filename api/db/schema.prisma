@@ -49,5 +49,6 @@ model Plant {
   conditions     String
   plantType      String
   tag            String[]
+  vicfloraUid    String
   createdAt      DateTime    @default(now())
 }
