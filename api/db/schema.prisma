@@ -40,7 +40,15 @@ model Plant {
   media          Json[]
   collectionType Collection? @relation(fields: [collectionId], references: [id])
   collectionId   Int
-  information    Json
+  size           String
+  soil           String
+  flowers        String
+  foliage        String
+  attracts       String[]
+  flowering      String
+  conditions     String
+  plantType      String
   tag            String[]
+  vicfloraUid    String
   createdAt      DateTime    @default(now())
 }
