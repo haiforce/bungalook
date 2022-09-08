@@ -6,11 +6,10 @@ const Header = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
-                <h1>Landscaping Services</h1>
+                <h1>Bungalook Nursery</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Your local indigenous plants Service.
                   <br />
-                  Duis sed dapibus leo nec ornare diam.
                 </p>
                 <a href="#about" className="btn btn-custom btn-lg page-scroll">
                   More Info

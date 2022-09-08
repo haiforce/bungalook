@@ -7,21 +7,19 @@ const Home = () => {
             <div className="about-text">
               <h2>
                 Welcome to
-                <span>Landscaper</span>
+                <span> Bungalook Nursery</span>
               </h2>
               <hr />
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis
-                bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam
-                commodo nibh.
+                The Bungalook Nursery is run by the Whitehorse Community
+                Indigenous Plant Project (WCIPP).
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis
-                bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam
-                commodo nibh.
+                We are a volunteer-run, not-for-profit group which supplies
+                locally indigenous plants to the Whitehorse community, parks and
+                City Council.
               </p>
+
               <a href="#services" className="btn btn-custom btn-lg page-scroll">
                 View All Services
               </a>
