@@ -3,7 +3,7 @@ const Home = () => {
     <div id="about">
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 col-md-6">
+          <div className="col-xs-12 col-md-8">
             <div className="about-text">
               <h2>
                 Welcome to
@@ -25,20 +25,23 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="col-xs-12 col-md-3">
+          <div className="col-xs-12 col-md-4">
             <div className="about-media">
-              <img src="/img/about-1.jpg" alt=" " />
+              <img src="/img/charity-status.png" alt="Charity" />
             </div>
             <div className="about-desc">
-              <h3>Garden Care</h3>
+              <h3>Charity Status</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                sed dapibus leo nec ornare diam sedasd commodo nibh ante
-                facilisis.
+                WCIPP/Bungalook is registered as a charity under the Australian
+                Charities and Not-for profits Commission.
+                <br />
+                The Australian Charities and Not-for-profits Commission (ACNC)
+                is the national regulator of charities – it is a federal
+                government agency.
               </p>
             </div>
           </div>
-          <div className="col-xs-12 col-md-3">
+          {/* {<div className="col-xs-12 col-md-3">
             <div className="about-media">
               <img src="/img/about-2.jpg" alt=" " />
             </div>
@@ -49,7 +52,7 @@ const Home = () => {
                 sed dapibus leo nec ornare diam sedasd commodo nibh ante.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
