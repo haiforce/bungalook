@@ -1,61 +1,54 @@
-const Home = () => {
-  return (
-    <div id="about">
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-md-6">
-            <div className="about-text">
-              <h2>
-                Welcome to
-                <span>Landscaper</span>
-              </h2>
-              <hr />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis
-                bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam
-                commodo nibh.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis
-                bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam
-                commodo nibh.
-              </p>
-              <a href="#services" className="btn btn-custom btn-lg page-scroll">
-                View All Services
-              </a>
-            </div>
-          </div>
-          <div className="col-xs-12 col-md-3">
-            <div className="about-media">
-              <img src="/img/about-1.jpg" alt=" " />
-            </div>
-            <div className="about-desc">
-              <h3>Garden Care</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                sed dapibus leo nec ornare diam sedasd commodo nibh ante
-                facilisis.
-              </p>
-            </div>
-          </div>
-          <div className="col-xs-12 col-md-3">
-            <div className="about-media">
-              <img src="/img/about-2.jpg" alt=" " />
-            </div>
-            <div className="about-desc">
-              <h3>Lawn Care</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                sed dapibus leo nec ornare diam sedasd commodo nibh ante.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+import {
+  Stack,
+  Flex,
+  Button,
+  Text,
+  VStack,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
-export default Home
+export default function WithBackgroundImage() {
+  return (
+    <Flex
+      w={'full'}
+      h={'100vh'}
+      backgroundImage={
+        'url(https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)'
+      }
+      backgroundSize={'cover'}
+      backgroundPosition={'center center'}>
+      <VStack
+        w={'full'}
+        justify={'center'}
+        px={useBreakpointValue({ base: 4, md: 8 })}
+        bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
+        <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
+          <Text
+            color={'white'}
+            fontWeight={700}
+            lineHeight={1.2}
+            fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            eiusmod tempor
+          </Text>
+          <Stack direction={'row'}>
+            <Button
+              bg={'blue.400'}
+              rounded={'full'}
+              color={'white'}
+              _hover={{ bg: 'blue.500' }}>
+              Show me more
+            </Button>
+            <Button
+              bg={'whiteAlpha.300'}
+              rounded={'full'}
+              color={'white'}
+              _hover={{ bg: 'whiteAlpha.500' }}>
+              Show me more
+            </Button>
+          </Stack>
+        </Stack>
+      </VStack>
+    </Flex>
+  );
+}
