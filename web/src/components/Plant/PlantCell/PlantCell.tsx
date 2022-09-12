@@ -13,8 +13,16 @@ export const QUERY = gql`
       price
       media
       collectionId
-      information
+      size
+      soil
+      flowers
+      foliage
+      attracts
+      flowering
+      conditions
+      plantType
       tag
+      vicfloraUid
       createdAt
     }
   }

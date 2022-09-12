@@ -7,8 +7,16 @@ export const schema = gql`
     media: [JSON]!
     collectionType: Collection
     collectionId: Int!
-    information: JSON!
+    size: String!
+    soil: String!
+    flowers: String!
+    foliage: String!
+    attracts: [String]!
+    flowering: String!
+    conditions: String!
+    plantType: String!
     tag: [String]!
+    vicfloraUid: String!
     createdAt: DateTime!
   }
 
@@ -23,8 +31,16 @@ export const schema = gql`
     price: Float!
     media: [JSON]!
     collectionId: Int!
-    information: JSON!
+    size: String!
+    soil: String!
+    flowers: String!
+    foliage: String!
+    attracts: [String]!
+    flowering: String!
+    conditions: String!
+    plantType: String!
     tag: [String]!
+    vicfloraUid: String!
   }
 
   input UpdatePlantInput {
@@ -33,8 +49,16 @@ export const schema = gql`
     price: Float
     media: [JSON]!
     collectionId: Int
-    information: JSON
+    size: String
+    soil: String
+    flowers: String
+    foliage: String
+    attracts: [String]!
+    flowering: String
+    conditions: String
+    plantType: String
     tag: [String]!
+    vicfloraUid: String
   }
 
   type Mutation {

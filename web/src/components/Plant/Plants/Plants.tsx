@@ -85,8 +85,16 @@ const PlantsList = ({ plants }) => {
             <th>Price</th>
             <th>Media</th>
             <th>Collection id</th>
-            <th>Information</th>
+            <th>Size</th>
+            <th>Soil</th>
+            <th>Flowers</th>
+            <th>Foliage</th>
+            <th>Attracts</th>
+            <th>Flowering</th>
+            <th>Conditions</th>
+            <th>Plant type</th>
             <th>Tag</th>
+            <th>Vicflora uid</th>
             <th>Created at</th>
             <th>&nbsp;</th>
           </tr>
@@ -100,8 +108,16 @@ const PlantsList = ({ plants }) => {
               <td>{truncate(plant.price)}</td>
               <td>{jsonTruncate(plant.media)}</td>
               <td>{truncate(plant.collectionId)}</td>
-              <td>{jsonTruncate(plant.information)}</td>
+              <td>{truncate(plant.size)}</td>
+              <td>{truncate(plant.soil)}</td>
+              <td>{truncate(plant.flowers)}</td>
+              <td>{truncate(plant.foliage)}</td>
+              <td>{truncate(plant.attracts)}</td>
+              <td>{truncate(plant.flowering)}</td>
+              <td>{truncate(plant.conditions)}</td>
+              <td>{truncate(plant.plantType)}</td>
               <td>{truncate(plant.tag)}</td>
+              <td>{truncate(plant.vicfloraUid)}</td>
               <td>{timeTag(plant.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">

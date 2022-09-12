@@ -66,45 +66,59 @@ const Plant = ({ plant }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">
-            Plant {plant.id} Detail
-          </h2>
+          <h2 className="rw-heading rw-heading-secondary">Plant {plant.id} Detail</h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{plant.id}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Name</th>
               <td>{plant.name}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Description</th>
               <td>{plant.description}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Price</th>
               <td>{plant.price}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Media</th>
               <td>{jsonDisplay(plant.media)}</td>
-            </tr>
-            <tr>
+            </tr><tr>
               <th>Collection id</th>
               <td>{plant.collectionId}</td>
-            </tr>
-            <tr>
-              <th>Information</th>
-              <td>{jsonDisplay(plant.information)}</td>
-            </tr>
-            <tr>
+            </tr><tr>
+              <th>Size</th>
+              <td>{plant.size}</td>
+            </tr><tr>
+              <th>Soil</th>
+              <td>{plant.soil}</td>
+            </tr><tr>
+              <th>Flowers</th>
+              <td>{plant.flowers}</td>
+            </tr><tr>
+              <th>Foliage</th>
+              <td>{plant.foliage}</td>
+            </tr><tr>
+              <th>Attracts</th>
+              <td>{plant.attracts}</td>
+            </tr><tr>
+              <th>Flowering</th>
+              <td>{plant.flowering}</td>
+            </tr><tr>
+              <th>Conditions</th>
+              <td>{plant.conditions}</td>
+            </tr><tr>
+              <th>Plant type</th>
+              <td>{plant.plantType}</td>
+            </tr><tr>
               <th>Tag</th>
               <td>{plant.tag}</td>
-            </tr>
-            <tr>
+            </tr><tr>
+              <th>Vicflora uid</th>
+              <td>{plant.vicfloraUid}</td>
+            </tr><tr>
               <th>Created at</th>
               <td>{timeTag(plant.createdAt)}</td>
             </tr>
