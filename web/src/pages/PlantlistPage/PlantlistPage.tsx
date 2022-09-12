@@ -1,5 +1,4 @@
 import PlantsListCell from 'src/components/PlantsList/PlantsListCell'
-import StyleSheetTag from 'src/components/StyleSheetTag/StyleSheetTag'
 
 type PlantlistPageProps = {
   id: string
@@ -8,7 +7,6 @@ type PlantlistPageProps = {
 const PlantlistPage = ({ id }: PlantlistPageProps) => {
   return (
     <>
-      <StyleSheetTag type="plantList" />
       <div
         className="container-fluid page-header mb-5 wow fadeIn"
         data-wow-delay="0.1s"
