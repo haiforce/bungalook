@@ -12,11 +12,11 @@ export const schema = gql`
     flowers: String!
     foliage: String!
     attracts: [String]!
-    flowering: String!
+    flowering: [String]!
     conditions: String!
     plantType: String!
     tag: [String]!
-    vicfloraUid: String!
+    vicfloraUuid: String!
     createdAt: DateTime!
   }
 
@@ -36,11 +36,11 @@ export const schema = gql`
     flowers: String!
     foliage: String!
     attracts: [String]!
-    flowering: String!
+    flowering: [String]!
     conditions: String!
     plantType: String!
     tag: [String]!
-    vicfloraUid: String!
+    vicfloraUuid: String!
   }
 
   input UpdatePlantInput {
@@ -54,11 +54,11 @@ export const schema = gql`
     flowers: String
     foliage: String
     attracts: [String]!
-    flowering: String
+    flowering: [String]!
     conditions: String
     plantType: String
     tag: [String]!
-    vicfloraUid: String
+    vicfloraUuid: String
   }
 
   type Mutation {

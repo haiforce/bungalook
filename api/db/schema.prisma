@@ -45,10 +45,10 @@ model Plant {
   flowers        String
   foliage        String
   attracts       String[]
-  flowering      String
+  flowering      String[]
   conditions     String
   plantType      String
   tag            String[]
-  vicfloraUid    String
+  vicfloraUuid   String
   createdAt      DateTime    @default(now())
 }

@@ -116,8 +116,8 @@ const Plant = ({ plant }) => {
               <th>Tag</th>
               <td>{plant.tag}</td>
             </tr><tr>
-              <th>Vicflora uid</th>
-              <td>{plant.vicfloraUid}</td>
+              <th>Vicflora uuid</th>
+              <td>{plant.vicfloraUuid}</td>
             </tr><tr>
               <th>Created at</th>
               <td>{timeTag(plant.createdAt)}</td>

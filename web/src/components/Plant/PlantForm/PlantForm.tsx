@@ -340,23 +340,23 @@ const PlantForm = (props) => {
         <FieldError name="tag" className="rw-field-error" />
 
         <Label
-          name="vicfloraUid"
+          name="vicfloraUuid"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Vicflora uid
+          Vicflora uuid
         </Label>
         
           <TextField
-            name="vicfloraUid"
-            defaultValue={props.plant?.vicfloraUid}
+            name="vicfloraUuid"
+            defaultValue={props.plant?.vicfloraUuid}
             className="rw-input"
             errorClassName="rw-input rw-input-error"
             validation={{ required: true }}
           />
         
 
-        <FieldError name="vicfloraUid" className="rw-field-error" />
+        <FieldError name="vicfloraUuid" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit

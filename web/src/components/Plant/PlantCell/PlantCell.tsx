@@ -22,7 +22,7 @@ export const QUERY = gql`
       conditions
       plantType
       tag
-      vicfloraUid
+      vicfloraUuid
       createdAt
     }
   }

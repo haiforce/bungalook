@@ -25,7 +25,7 @@ describe('plants', () => {
       input: {
         name: 'String',
         description: 'String',
-        price: 2111190.1441587675,
+        price: 853996.0824603044,
         media: { foo: 'bar' },
         collectionId: scenario.plant.two.collectionId,
         size: 'String',
@@ -37,13 +37,13 @@ describe('plants', () => {
         conditions: 'String',
         plantType: 'String',
         tag: 'String',
-        vicfloraUid: 'String',
+        vicfloraUuid: 'String',
       },
     })
 
     expect(result.name).toEqual('String')
     expect(result.description).toEqual('String')
-    expect(result.price).toEqual(2111190.1441587675)
+    expect(result.price).toEqual(853996.0824603044)
     expect(result.media).toEqual({ foo: 'bar' })
     expect(result.collectionId).toEqual(scenario.plant.two.collectionId)
     expect(result.size).toEqual('String')
@@ -55,7 +55,7 @@ describe('plants', () => {
     expect(result.conditions).toEqual('String')
     expect(result.plantType).toEqual('String')
     expect(result.tag).toEqual('String')
-    expect(result.vicfloraUid).toEqual('String')
+    expect(result.vicfloraUuid).toEqual('String')
   })
 
   scenario('updates a plant', async (scenario: StandardScenario) => {

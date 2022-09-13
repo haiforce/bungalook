@@ -94,7 +94,7 @@ const PlantsList = ({ plants }) => {
             <th>Conditions</th>
             <th>Plant type</th>
             <th>Tag</th>
-            <th>Vicflora uid</th>
+            <th>Vicflora uuid</th>
             <th>Created at</th>
             <th>&nbsp;</th>
           </tr>
@@ -117,7 +117,7 @@ const PlantsList = ({ plants }) => {
               <td>{truncate(plant.conditions)}</td>
               <td>{truncate(plant.plantType)}</td>
               <td>{truncate(plant.tag)}</td>
-              <td>{truncate(plant.vicfloraUid)}</td>
+              <td>{truncate(plant.vicfloraUuid)}</td>
               <td>{timeTag(plant.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">

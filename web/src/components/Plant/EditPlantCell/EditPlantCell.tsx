@@ -25,7 +25,7 @@ export const QUERY = gql`
       conditions
       plantType
       tag
-      vicfloraUid
+      vicfloraUuid
       createdAt
     }
   }
@@ -48,7 +48,7 @@ const UPDATE_PLANT_MUTATION = gql`
       conditions
       plantType
       tag
-      vicfloraUid
+      vicfloraUuid
       createdAt
     }
   }
