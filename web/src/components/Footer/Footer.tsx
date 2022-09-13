@@ -4,6 +4,7 @@ import {
   Box,
   chakra,
   Container,
+  Image,
   Link,
   Stack,
   Text,
@@ -64,7 +65,7 @@ const SocialButton = ({
   )
 }
 
-export default function SmallCentered() {
+export default function SmallWithLogoLeft() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
@@ -74,47 +75,28 @@ export default function SmallCentered() {
         as={Stack}
         maxW={'6xl'}
         py={4}
-        spacing={4}
-        justify={'center'}
-        align={'center'}
+        direction={{ base: 'column', md: 'row' }}
+        spacing={40}
+        justify={{ base: 'center', md: 'space-between' }}
+        align={{ base: 'center', md: 'center' }}
       >
-        <Logo />
         <Stack direction={'row'} spacing={6}>
-          <Link href={'#'}>Home</Link>
-          <Link href={'#'}>About</Link>
-          <Link href={'#'}>Blog</Link>
-          <Link href={'#'}>Contact</Link>
+          <Image src="../logo.png" boxSize="45px"></Image>
+          <Text>© 2022 Bungalook Nursery. All rights reserved</Text>
+        </Stack>
+
+        <Stack direction={'row'} spacing={6}>
+          <SocialButton label={'Twitter'} href={'#'}>
+            <FaTwitter />
+          </SocialButton>
+          <SocialButton label={'YouTube'} href={'#'}>
+            <FaYoutube />
+          </SocialButton>
+          <SocialButton label={'Instagram'} href={'#'}>
+            <FaInstagram />
+          </SocialButton>
         </Stack>
       </Container>
-
-      <Box
-        borderTopWidth={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.700')}
-      >
-        <Container
-          as={Stack}
-          maxW={'6xl'}
-          py={4}
-          direction={{ base: 'column', md: 'row' }}
-          spacing={4}
-          justify={{ base: 'center', md: 'space-between' }}
-          align={{ base: 'center', md: 'center' }}
-        >
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
-          <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
-              <FaTwitter />
-            </SocialButton>
-            <SocialButton label={'YouTube'} href={'#'}>
-              <FaYoutube />
-            </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
-              <FaInstagram />
-            </SocialButton>
-          </Stack>
-        </Container>
-      </Box>
     </Box>
   )
 }

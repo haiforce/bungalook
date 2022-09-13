@@ -58,7 +58,7 @@ export default function WithSubnavigation() {
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}
           >
-            Logo
+            Bungalook
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -265,22 +265,11 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
+    label: 'Home',
+    href: '#',
   },
   {
-    label: 'Find Work',
+    label: 'Plants',
     children: [
       {
         label: 'Job Board',
@@ -295,11 +284,36 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'Newsletters',
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'Blogs',
     href: '#',
+  },
+  {
+    label: 'About',
+    children: [
+      {
+        label: 'Our Culture',
+        subLabel: 'Trending Design to inspire you',
+        href: '#',
+      },
+      {
+        label: 'Our History',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+      {
+        label: 'Occupational Health & Safety',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+      {
+        label: 'contact us',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+    ],
   },
 ]
