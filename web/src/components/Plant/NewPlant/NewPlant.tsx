@@ -24,9 +24,7 @@ const NewPlant = () => {
   })
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, {
-      collectionId: parseInt(input.collectionId),
-    })
+    const castInput = Object.assign(input, { collectionId: parseInt(input.collectionId), })
     createPlant({ variables: { input: castInput } })
   }
 

@@ -25,21 +25,37 @@ describe('plants', () => {
       input: {
         name: 'String',
         description: 'String',
-        price: 4937722.151945587,
+        price: 853996.0824603044,
         media: { foo: 'bar' },
         collectionId: scenario.plant.two.collectionId,
-        information: { foo: 'bar' },
+        size: 'String',
+        soil: 'String',
+        flowers: 'String',
+        foliage: 'String',
+        attracts: 'String',
+        flowering: 'String',
+        conditions: 'String',
+        plantType: 'String',
         tag: 'String',
+        vicfloraUuid: 'String',
       },
     })
 
     expect(result.name).toEqual('String')
     expect(result.description).toEqual('String')
-    expect(result.price).toEqual(4937722.151945587)
+    expect(result.price).toEqual(853996.0824603044)
     expect(result.media).toEqual({ foo: 'bar' })
     expect(result.collectionId).toEqual(scenario.plant.two.collectionId)
-    expect(result.information).toEqual({ foo: 'bar' })
+    expect(result.size).toEqual('String')
+    expect(result.soil).toEqual('String')
+    expect(result.flowers).toEqual('String')
+    expect(result.foliage).toEqual('String')
+    expect(result.attracts).toEqual('String')
+    expect(result.flowering).toEqual('String')
+    expect(result.conditions).toEqual('String')
+    expect(result.plantType).toEqual('String')
     expect(result.tag).toEqual('String')
+    expect(result.vicfloraUuid).toEqual('String')
   })
 
   scenario('updates a plant', async (scenario: StandardScenario) => {
