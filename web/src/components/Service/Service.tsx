@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 import {
   Container,
   SimpleGrid,
@@ -9,18 +11,13 @@ import {
   StackDivider,
   Icon,
   useColorModeValue,
-} from '@chakra-ui/react';
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-} from 'react-icons/io5';
-import { ReactElement } from 'react';
+} from '@chakra-ui/react'
+import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5'
 
 interface FeatureProps {
-  text: string;
-  iconBg: string;
-  icon?: ReactElement;
+  text: string
+  iconBg: string
+  icon?: ReactElement
 }
 
 const Feature = ({ text, icon, iconBg }: FeatureProps) => {
@@ -32,13 +29,14 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
         align={'center'}
         justify={'center'}
         rounded={'full'}
-        bg={iconBg}>
+        bg={iconBg}
+      >
         {icon}
       </Flex>
       <Text fontWeight={600}>{text}</Text>
     </Stack>
-  );
-};
+  )
+}
 
 export default function SplitWithImage() {
   return (
@@ -53,7 +51,8 @@ export default function SplitWithImage() {
             bg={useColorModeValue('blue.50', 'blue.900')}
             p={2}
             alignSelf={'flex-start'}
-            rounded={'md'}>
+            rounded={'md'}
+          >
             Our Story
           </Text>
           <Heading>A digital Product design agency</Heading>
@@ -67,7 +66,8 @@ export default function SplitWithImage() {
               <StackDivider
                 borderColor={useColorModeValue('gray.100', 'gray.700')}
               />
-            }>
+            }
+          >
             <Feature
               icon={
                 <Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />
@@ -101,5 +101,5 @@ export default function SplitWithImage() {
         </Flex>
       </SimpleGrid>
     </Container>
-  );
+  )
 }

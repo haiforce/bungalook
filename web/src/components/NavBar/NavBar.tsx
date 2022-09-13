@@ -1,4 +1,10 @@
 import {
+  HamburgerIcon,
+  CloseIcon,
+  ChevronDownIcon,
+  ChevronRightIcon,
+} from '@chakra-ui/icons'
+import {
   Box,
   Flex,
   Text,
@@ -14,16 +20,10 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
-} from '@chakra-ui/react';
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from '@chakra-ui/icons';
+} from '@chakra-ui/react'
 
 export default function WithSubnavigation() {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure()
 
   return (
     <Box>
@@ -36,11 +36,13 @@ export default function WithSubnavigation() {
         borderBottom={1}
         borderStyle={'solid'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
+        align={'center'}
+      >
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}>
+          display={{ base: 'flex', md: 'none' }}
+        >
           <IconButton
             onClick={onToggle}
             icon={
@@ -54,8 +56,9 @@ export default function WithSubnavigation() {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Logo
+            color={useColorModeValue('gray.800', 'white')}
+          >
+            Bungalook
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -67,13 +70,15 @@ export default function WithSubnavigation() {
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
-          spacing={6}>
+          spacing={6}
+        >
           <Button
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'#'}>
+            href={'#'}
+          >
             Sign In
           </Button>
           <Button
@@ -84,7 +89,8 @@ export default function WithSubnavigation() {
             bg={'pink.400'}
             _hover={{
               bg: 'pink.300',
-            }}>
+            }}
+          >
             Sign Up
           </Button>
         </Stack>
@@ -94,13 +100,13 @@ export default function WithSubnavigation() {
         <MobileNav />
       </Collapse>
     </Box>
-  );
+  )
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const linkColor = useColorModeValue('gray.600', 'gray.200')
+  const linkHoverColor = useColorModeValue('gray.800', 'white')
+  const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -117,7 +123,8 @@ const DesktopNav = () => {
                 _hover={{
                   textDecoration: 'none',
                   color: linkHoverColor,
-                }}>
+                }}
+              >
                 {navItem.label}
               </Link>
             </PopoverTrigger>
@@ -129,7 +136,8 @@ const DesktopNav = () => {
                 bg={popoverContentBgColor}
                 p={4}
                 rounded={'xl'}
-                minW={'sm'}>
+                minW={'sm'}
+              >
                 <Stack>
                   {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
@@ -141,8 +149,8 @@ const DesktopNav = () => {
         </Box>
       ))}
     </Stack>
-  );
-};
+  )
+}
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
@@ -152,13 +160,15 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+    >
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
             _groupHover={{ color: 'pink.400' }}
-            fontWeight={500}>
+            fontWeight={500}
+          >
             {label}
           </Text>
           <Text fontSize={'sm'}>{subLabel}</Text>
@@ -170,29 +180,31 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
           justify={'flex-end'}
           align={'center'}
-          flex={1}>
+          flex={1}
+        >
           <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
-  );
-};
+  )
+}
 
 const MobileNav = () => {
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
-      display={{ md: 'none' }}>
+      display={{ md: 'none' }}
+    >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
-  );
-};
+  )
+}
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure()
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
@@ -204,10 +216,12 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         align={'center'}
         _hover={{
           textDecoration: 'none',
-        }}>
+        }}
+      >
         <Text
           fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}>
+          color={useColorModeValue('gray.600', 'gray.200')}
+        >
           {label}
         </Text>
         {children && (
@@ -228,7 +242,8 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           borderLeft={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}>
+          align={'start'}
+        >
           {children &&
             children.map((child) => (
               <Link key={child.label} py={2} href={child.href}>
@@ -238,34 +253,23 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         </Stack>
       </Collapse>
     </Stack>
-  );
-};
+  )
+}
 
 interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
+  label: string
+  subLabel?: string
+  children?: Array<NavItem>
+  href?: string
 }
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
+    label: 'Home',
+    href: '#',
   },
   {
-    label: 'Find Work',
+    label: 'Plants',
     children: [
       {
         label: 'Job Board',
@@ -280,11 +284,36 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'Newsletters',
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'Blogs',
     href: '#',
   },
-];
+  {
+    label: 'About',
+    children: [
+      {
+        label: 'Our Culture',
+        subLabel: 'Trending Design to inspire you',
+        href: '#',
+      },
+      {
+        label: 'Our History',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+      {
+        label: 'Occupational Health & Safety',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+      {
+        label: 'contact us',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+    ],
+  },
+]

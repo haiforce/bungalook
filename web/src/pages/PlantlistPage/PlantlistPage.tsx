@@ -8,11 +8,11 @@ const PlantlistPage = ({ id }: PlantlistPageProps) => {
   return (
     <>
       <div
-        className="container-fluid page-header mb-5 wow fadeIn"
+        className="container-fluid page-header wow fadeIn mb-5"
         data-wow-delay="0.1s"
       >
         <div className="container">
-          <h1 className="display-3 mb-3 animated slideInDown">Plants</h1>
+          <h1 className="display-3 animated slideInDown mb-3">Plants</h1>
           <nav aria-label="breadcrumb animated slideInDown">
             <ol className="breadcrumb mb-0">
               <li className="breadcrumb-item">

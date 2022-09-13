@@ -23,11 +23,11 @@ const PlantsList = ({ collection }: { collection: Collection }) => {
                 src={item.media[0]?.value}
                 alt=""
               />
-              <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+              <div className="bg-secondary position-absolute start-0 top-0 m-4 rounded py-1 px-3 text-white">
                 New
               </div>
             </div>
-            <div className="text-center p-4">
+            <div className="p-4 text-center">
               <Link to={routes.plantDetail({ id: String(item.id) })}>
                 <a className="d-block h5 mb-2">{item.name}</a>
               </Link>
@@ -37,12 +37,12 @@ const PlantsList = ({ collection }: { collection: Collection }) => {
               </span>
             </div>
             <div className="d-flex border-top">
-              <small className="w-50 text-center border-end py-2">
+              <small className="w-50 border-end py-2 text-center">
                 <a className="text-body" href="">
                   <i className="fa fa-eye text-primary me-2"></i>View detail
                 </a>
               </small>
-              <small className="w-50 text-center py-2">
+              <small className="w-50 py-2 text-center">
                 <a className="text-body" href="">
                   <i className="fa fa-shopping-bag text-primary me-2"></i>Add to
                   cart
@@ -62,7 +62,7 @@ const PlantsList = ({ collection }: { collection: Collection }) => {
         <div className="row g-0 gx-5 align-items-end">
           <div className="col-lg-6">
             <div
-              className="section-header text-start mb-5 wow fadeInUp"
+              className="section-header wow fadeInUp mb-5 text-start"
               data-wow-delay="0.1s"
               style={{ maxWidth: '500px' }}
             >
@@ -74,13 +74,13 @@ const PlantsList = ({ collection }: { collection: Collection }) => {
             </div>
           </div>
           <div
-            className="col-lg-6 text-start text-lg-end wow slideInRight"
+            className="col-lg-6 text-lg-end wow slideInRight text-start"
             data-wow-delay="0.1s"
           >
             <ul className="nav nav-pills d-inline-flex justify-content-end mb-5">
               <li className="nav-item me-2">
                 <a
-                  className="btn btn-outline-primary border-2 active"
+                  className="btn btn-outline-primary active border-2"
                   data-bs-toggle="pill"
                   href="#tab-1"
                 >
@@ -109,11 +109,11 @@ const PlantsList = ({ collection }: { collection: Collection }) => {
           </div>
         </div>
         <div className="tab-content">
-          <div id="tab-1" className="tab-pane fade show p-0 active">
+          <div id="tab-1" className="tab-pane fade show active p-0">
             <div className="row g-4">
               {generateList()}
               <div
-                className="col-12 text-center wow fadeInUp"
+                className="col-12 wow fadeInUp text-center"
                 data-wow-delay="0.1s"
               >
                 <a className="btn btn-primary rounded-pill py-3 px-5" href="">
