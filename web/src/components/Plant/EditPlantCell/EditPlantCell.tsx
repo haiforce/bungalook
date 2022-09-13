@@ -72,17 +72,26 @@ export const Success = ({ plant }: CellSuccessProps<EditPlantById>) => {
   })
 
   const onSave = (input, id) => {
-    const castInput = Object.assign(input, { collectionId: parseInt(input.collectionId), })
+    const castInput = Object.assign(input, {
+      collectionId: parseInt(input.collectionId),
+    })
     updatePlant({ variables: { id, input: castInput } })
   }
 
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Plant {plant.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Plant {plant.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <PlantForm plant={plant} onSave={onSave} error={error} loading={loading} />
+        <PlantForm
+          plant={plant}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

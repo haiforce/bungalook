@@ -49,7 +49,7 @@ const Categroy = ({ collections }) => {
   return (
     <div id="portfolio">
       <div className="container">
-        <div className="section-title text-center center">
+        <div className="section-title center text-center">
           <h2>Plants</h2>
           <hr />
           <p>
