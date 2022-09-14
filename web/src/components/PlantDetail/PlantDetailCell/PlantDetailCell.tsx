@@ -13,7 +13,6 @@ export const QUERY = gql`
       price
       media
       collectionId
-      information
       tag
       createdAt
     }

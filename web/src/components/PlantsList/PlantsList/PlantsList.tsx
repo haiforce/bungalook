@@ -1,130 +1,89 @@
-import { useCallback } from 'react'
-
-import type { Collection } from 'types/graphql'
-
+import type { Collection, Plant } from 'types/graphql'
 import { Link, routes } from '@redwoodjs/router'
+import {
+  Box,
+  SimpleGrid,
+  useColorModeValue,
+  Heading,
+  Text,
+  Stack,
+  Image,
+} from '@chakra-ui/react'
+
+const STATIC =
+  'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+
+
+const PlantCard = ({ detail, type }: { detail: Plant, type: string }) => {
+  const IMAGE = (detail.media && detail.media.length && detail.media[0]?.value) || STATIC
+  return (
+    <Box
+      role={'group'}
+      p={6}
+      maxW={'330px'}
+      w={'full'}
+      bg={useColorModeValue('white', 'gray.800')}
+      boxShadow={'2xl'}
+      rounded={'lg'}
+      pos={'relative'}
+      zIndex={1}>
+      <Box
+        rounded={'lg'}
+        mt={-12}
+        pos={'relative'}
+        height={'230px'}
+        _after={{
+          transition: 'all .3s ease',
+          content: '""',
+          w: 'full',
+          h: 'full',
+          pos: 'absolute',
+          top: 5,
+          left: 0,
+          backgroundImage: `url(${(IMAGE)})`,
+          filter: 'blur(15px)',
+          zIndex: -1,
+        }}
+        _groupHover={{
+          _after: {
+            filter: 'blur(20px)',
+          },
+        }}>
+        <Image
+          rounded={'lg'}
+          height={230}
+          width={282}
+          objectFit={'cover'}
+          src={IMAGE}
+        />
+      </Box>
+      <Stack pt={10} align={'center'}>
+        <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
+          {type}
+        </Text>
+        <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500} whiteSpace={'nowrap'}>
+          {detail.name}
+        </Heading>
+        <Stack direction={'row'} align={'center'}>
+          <Text fontWeight={800} fontSize={'xl'}>
+            $57
+          </Text>
+          <Text textDecoration={'line-through'} color={'gray.600'}>
+            $199
+          </Text>
+        </Stack>
+      </Stack>
+    </Box>
+  )
+}
 
 const PlantsList = ({ collection }: { collection: Collection }) => {
-  const generateList = useCallback(() => {
-    const delayArray = [0.1, 0.3, 0.5, 0.7]
-    const result = collection.plants.map((item, index) => {
-      return (
-        <div
-          className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
-          data-wow-delay={`${delayArray[index % 4]}s`}
-        >
-          <div className="product-item">
-            <div
-              className="position-relative bg-light overflow-hidden"
-              style={{ maxHeight: '200px' }}
-            >
-              <img
-                className="img-fluid w-100"
-                src={item.media[0]?.value}
-                alt=""
-              />
-              <div className="bg-secondary position-absolute start-0 top-0 m-4 rounded py-1 px-3 text-white">
-                New
-              </div>
-            </div>
-            <div className="p-4 text-center">
-              <Link to={routes.plantDetail({ id: String(item.id) })}>
-                <a className="d-block h5 mb-2">{item.name}</a>
-              </Link>
-              <span className="text-primary me-1">${item.price}</span>
-              <span className="text-body text-decoration-line-through">
-                $19.0
-              </span>
-            </div>
-            <div className="d-flex border-top">
-              <small className="w-50 border-end py-2 text-center">
-                <a className="text-body" href="">
-                  <i className="fa fa-eye text-primary me-2"></i>View detail
-                </a>
-              </small>
-              <small className="w-50 py-2 text-center">
-                <a className="text-body" href="">
-                  <i className="fa fa-shopping-bag text-primary me-2"></i>Add to
-                  cart
-                </a>
-              </small>
-            </div>
-          </div>
-        </div>
-      )
-    })
-    return result
-  }, [collection])
-
   return (
-    <div className="container-xxl py-5">
-      <div className="container">
-        <div className="row g-0 gx-5 align-items-end">
-          <div className="col-lg-6">
-            <div
-              className="section-header wow fadeInUp mb-5 text-start"
-              data-wow-delay="0.1s"
-              style={{ maxWidth: '500px' }}
-            >
-              <h1 className="display-5 mb-3">Our Plants</h1>
-              <p>
-                Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum
-                diam justo sed rebum vero dolor duo.
-              </p>
-            </div>
-          </div>
-          <div
-            className="col-lg-6 text-lg-end wow slideInRight text-start"
-            data-wow-delay="0.1s"
-          >
-            <ul className="nav nav-pills d-inline-flex justify-content-end mb-5">
-              <li className="nav-item me-2">
-                <a
-                  className="btn btn-outline-primary active border-2"
-                  data-bs-toggle="pill"
-                  href="#tab-1"
-                >
-                  Vegetable
-                </a>
-              </li>
-              <li className="nav-item me-2">
-                <a
-                  className="btn btn-outline-primary border-2"
-                  data-bs-toggle="pill"
-                  href="#tab-2"
-                >
-                  Fruits{' '}
-                </a>
-              </li>
-              <li className="nav-item me-0">
-                <a
-                  className="btn btn-outline-primary border-2"
-                  data-bs-toggle="pill"
-                  href="#tab-3"
-                >
-                  Fresh
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="tab-content">
-          <div id="tab-1" className="tab-pane fade show active p-0">
-            <div className="row g-4">
-              {generateList()}
-              <div
-                className="col-12 wow fadeInUp text-center"
-                data-wow-delay="0.1s"
-              >
-                <a className="btn btn-primary rounded-pill py-3 px-5" href="">
-                  Browse More Plants
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <SimpleGrid minChildWidth='300px' spacing='40px'>
+      {collection.plants.map((plant, index) => {
+        return <PlantCard detail={plant} type={collection.name} key={index} />
+      })}
+    </SimpleGrid>
   )
 }
 
