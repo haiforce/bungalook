@@ -9,7 +9,7 @@ import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 import PlantsList from 'src/components/PlantsList/PlantsList/PlantsList'
 
 export const QUERY = gql`
-  query FindPlants($id: Int!) {
+  query FindPlantList($id: Int!) {
     collection: collection(id: $id) {
       id
       name
@@ -20,7 +20,6 @@ export const QUERY = gql`
         description
         price
         media
-        information
         tag
       }
     }

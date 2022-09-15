@@ -5,12 +5,12 @@ import Service from 'src/components/Service/Service'
 
 const HomePage = () => {
   return (
-    <div id="homePage">
+    <>
       <NavBar />
       <Home />
       <Service />
       <Footer />
-    </div>
+    </>
   )
 }
 
