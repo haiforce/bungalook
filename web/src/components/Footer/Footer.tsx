@@ -81,7 +81,7 @@ export default function SmallWithLogoLeft() {
         align={{ base: 'center', md: 'center' }}
       >
         <Stack direction={'row'} spacing={6}>
-          <Image src="../logo.png" boxSize="45px"></Image>
+          <Image src="./images/logo.png" boxSize="45px"></Image>
           <Text>© 2022 Bungalook Nursery. All rights reserved</Text>
         </Stack>
 
