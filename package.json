@@ -24,6 +24,7 @@
   },
   "packageManager": "yarn@3.2.1",
   "dependencies": {
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "react-slick": "^0.29.0"
   }
 }

@@ -14,7 +14,15 @@ export const QUERY = gql`
       media
       collectionId
       tag
-      createdAt
+      size
+      soil
+      flowers
+      foliage
+      attracts
+      flowering
+      conditions
+      plantType
+      vicfloraUuid
     }
   }
 `
@@ -30,5 +38,5 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({
   plant,
 }: CellSuccessProps<FindPlantById, FindPlantByIdVariables>) => {
-  return <PlantDetail plant={plant} />
+  return <PlantDetail detail={plant} />
 }

@@ -1,5 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+import NavBar from 'src/components/NavBar/NavBar'
+import Footer from 'src/components/Footer/Footer'
 
 import PlantDetailCell from 'src/components/PlantDetail/PlantDetailCell'
 
@@ -10,20 +12,15 @@ type PlantDetailPageProps = {
 const PlantDetailPage = ({ id }: PlantDetailPageProps) => {
   return (
     <>
-      <MetaTags title="PlantDetail" description="PlantDetail page" />
-
-      <h1>PlantDetailPage</h1>
-      <p>
-        Find me in{' '}
-        <code>./web/src/pages/PlantDetailPage/PlantDetailPage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>plantDetail</code>, link to me with `
-        <Link to={routes.plantDetail({ id: '42' })}>PlantDetail 42</Link>`
-      </p>
-      <p>The parameter passed to me is {id}</p>
+      <div style={{ marginBottom: '50px' }}>
+        <NavBar />
+      </div>
       <PlantDetailCell id={Number(id)} />
+      <div style={{ marginTop: '20px' }}>
+        <Footer />
+      </div>
     </>
+
   )
 }
 
