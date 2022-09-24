@@ -25,24 +25,22 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
-  Avatar
+  Avatar,
 } from '@chakra-ui/react'
-import { Link as RwLink, routes } from '@redwoodjs/router'
+
 import { useAuth } from '@redwoodjs/auth'
+import { Link as RwLink, routes } from '@redwoodjs/router'
 
 const MenuBar = () => {
   const { isAuthenticated, logOut, currentUser, client: supabase } = useAuth()
 
   if (isAuthenticated) {
-    const { user_metadata: { full_name, avatar_url } } = supabase.auth.user()
+    const {
+      user_metadata: { full_name, avatar_url },
+    } = supabase.auth.user()
     return (
       <>
-        <Button
-          as={'p'}
-          fontSize={'sm'}
-          fontWeight={400}
-          variant={'link'}
-        >
+        <Button as={'p'} fontSize={'sm'} fontWeight={400} variant={'link'}>
           {full_name}
         </Button>
         <Menu>
@@ -51,13 +49,9 @@ const MenuBar = () => {
             rounded={'full'}
             variant={'link'}
             cursor={'pointer'}
-            minW={0}>
-            <Avatar
-              size={'sm'}
-              src={
-                avatar_url
-              }
-            />
+            minW={0}
+          >
+            <Avatar size={'sm'} src={avatar_url} />
           </MenuButton>
           <MenuList>
             <MenuItem>Profile</MenuItem>

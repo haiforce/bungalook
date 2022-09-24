@@ -1,3 +1,5 @@
+import { useMemo } from 'react'
+
 import {
   Box,
   chakra,
@@ -20,13 +22,11 @@ import {
   IconButton,
   useBreakpointValue,
   Grid,
-  GridItem
-} from '@chakra-ui/react';
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+  GridItem,
+} from '@chakra-ui/react'
+import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
+import Slider from 'react-slick'
 import type { Plant } from 'types/graphql'
-import Slider from 'react-slick';
-import { useMemo } from 'react';
-
 
 const settings = {
   dots: true,
@@ -38,26 +38,26 @@ const settings = {
   autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
-};
+}
 
 function CaptionCarousel({ media }: { media: Record<string, string>[] }) {
   // As we have used custom buttons, we need a reference variable to
   // change the state
-  const [slider, setSlider] = React.useState<Slider | null>(null);
+  const [slider, setSlider] = React.useState<Slider | null>(null)
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-  const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '30%', md: '40px' });
+  const top = useBreakpointValue({ base: '90%', md: '50%' })
+  const side = useBreakpointValue({ base: '30%', md: '40px' })
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
   const cards = useMemo(() => {
-    return media.map(item => {
+    return media.map((item) => {
       return {
         title: '',
         text: item.key === 'unkown' ? '' : item.key,
-        image: item.value
+        image: item.value,
       }
     })
   }, [media])
@@ -67,7 +67,8 @@ function CaptionCarousel({ media }: { media: Record<string, string>[] }) {
       position={'relative'}
       height={'600px'}
       width={'full'}
-      overflow={'hidden'}>
+      overflow={'hidden'}
+    >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -89,7 +90,8 @@ function CaptionCarousel({ media }: { media: Record<string, string>[] }) {
         top={top}
         transform={'translate(0%, -50%)'}
         zIndex={2}
-        onClick={() => slider?.slickPrev()}>
+        onClick={() => slider?.slickPrev()}
+      >
         <BiLeftArrowAlt size="40px" />
       </IconButton>
       {/* Right Icon */}
@@ -101,7 +103,8 @@ function CaptionCarousel({ media }: { media: Record<string, string>[] }) {
         top={top}
         transform={'translate(0%, -50%)'}
         zIndex={2}
-        onClick={() => slider?.slickNext()}>
+        onClick={() => slider?.slickNext()}
+      >
         <BiRightArrowAlt size="40px" />
       </IconButton>
       {/* Slider */}
@@ -114,7 +117,8 @@ function CaptionCarousel({ media }: { media: Record<string, string>[] }) {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}>
+            backgroundImage={`url(${card.image})`}
+          >
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
               <Stack
@@ -133,18 +137,19 @@ function CaptionCarousel({ media }: { media: Record<string, string>[] }) {
         ))}
       </Slider>
     </Box>
-  );
+  )
 }
 
 export default function Detail({ detail }: { detail: Plant }) {
-  const attracts = detail.attracts[0]?.split(",")
+  const attracts = detail.attracts[0]?.split(',')
   return (
     <Container maxW={'7xl'}>
       <SimpleGrid
-        style={{padding:'0px'}}
+        style={{ padding: '0px' }}
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 18, md: 24 }}>
+        py={{ base: 18, md: 24 }}
+      >
         <Flex>
           <CaptionCarousel media={detail.media} />
         </Flex>
@@ -153,13 +158,15 @@ export default function Detail({ detail }: { detail: Plant }) {
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+              fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}
+            >
               {detail.name}
             </Heading>
             <Text
               color={useColorModeValue('gray.900', 'gray.400')}
               fontWeight={300}
-              fontSize={'2xl'}>
+              fontSize={'2xl'}
+            >
               {`${detail.price} USD`}
             </Text>
           </Box>
@@ -171,12 +178,14 @@ export default function Detail({ detail }: { detail: Plant }) {
               <StackDivider
                 borderColor={useColorModeValue('gray.200', 'gray.600')}
               />
-            }>
+            }
+          >
             <VStack spacing={{ base: 4, sm: 6 }}>
               <Text
                 color={useColorModeValue('gray.500', 'gray.400')}
                 fontSize={'2xl'}
-                fontWeight={'300'}>
+                fontWeight={'300'}
+              >
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore
               </Text>
@@ -193,27 +202,51 @@ export default function Detail({ detail }: { detail: Plant }) {
                 color={useColorModeValue('yellow.500', 'yellow.300')}
                 fontWeight={'500'}
                 textTransform={'uppercase'}
-                mb={'4'}>
+                mb={'4'}
+              >
                 IMPORTANT TAG
               </Text>
-              <Grid templateColumns='repeat(5, 1fr)' gap={4} alignItems={'center'}>
-                <GridItem colSpan={2} >Flowering</GridItem>
+              <Grid
+                templateColumns="repeat(5, 1fr)"
+                gap={4}
+                alignItems={'center'}
+              >
+                <GridItem colSpan={2}>Flowering</GridItem>
                 <GridItem colStart={3} colEnd={6}>
-                  {detail.flowering.length ? detail.flowering.map((month) => (
-                    <Tag key={month} variant='solid' colorScheme='teal' style={{ marginRight: "10px", marginBottom: "5px" }}>
-                      {month}
-                    </Tag>
-                  )) : "NONE"}
+                  {detail.flowering.length
+                    ? detail.flowering.map((month) => (
+                        <Tag
+                          key={month}
+                          variant="solid"
+                          colorScheme="teal"
+                          style={{ marginRight: '10px', marginBottom: '5px' }}
+                        >
+                          {month}
+                        </Tag>
+                      ))
+                    : 'NONE'}
                 </GridItem>
               </Grid>
-              <Grid templateColumns='repeat(5, 1fr)' gap={4} alignItems={'center'} marginTop={'10px'}>
-                <GridItem colSpan={2} >Attracts</GridItem>
+              <Grid
+                templateColumns="repeat(5, 1fr)"
+                gap={4}
+                alignItems={'center'}
+                marginTop={'10px'}
+              >
+                <GridItem colSpan={2}>Attracts</GridItem>
                 <GridItem colStart={3} colEnd={6}>
-                  {attracts ? attracts.map((item) => (
-                    <Tag key={item} variant='solid' colorScheme='whatsapp' style={{ marginRight: "10px" }}>
-                      {item}
-                    </Tag>
-                  )) : "NONE"}
+                  {attracts
+                    ? attracts.map((item) => (
+                        <Tag
+                          key={item}
+                          variant="solid"
+                          colorScheme="whatsapp"
+                          style={{ marginRight: '10px' }}
+                        >
+                          {item}
+                        </Tag>
+                      ))
+                    : 'NONE'}
                 </GridItem>
               </Grid>
             </Box>
@@ -223,7 +256,8 @@ export default function Detail({ detail }: { detail: Plant }) {
                 color={useColorModeValue('yellow.500', 'yellow.300')}
                 fontWeight={'500'}
                 textTransform={'uppercase'}
-                mb={'4'}>
+                mb={'4'}
+              >
                 Plant Details
               </Text>
 
@@ -262,7 +296,11 @@ export default function Detail({ detail }: { detail: Plant }) {
                   <Text as={'span'} fontWeight={'bold'}>
                     Further information:
                   </Text>{' '}
-                  <Link href={`https://vicflora.rbg.vic.gov.au/flora/taxon/${detail.vicfloraUuid}`} color='teal.500' isExternal>
+                  <Link
+                    href={`https://vicflora.rbg.vic.gov.au/flora/taxon/${detail.vicfloraUuid}`}
+                    color="teal.500"
+                    isExternal
+                  >
                     VICFLORA
                   </Link>
                 </ListItem>
@@ -293,5 +331,5 @@ export default function Detail({ detail }: { detail: Plant }) {
         </Stack>
       </SimpleGrid>
     </Container>
-  );
+  )
 }
