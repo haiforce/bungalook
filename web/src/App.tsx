@@ -8,6 +8,8 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
 
+import theme from './theme'
+
 import './scaffold.css'
 import './index.css'
 
@@ -21,7 +23,7 @@ const App = () => (
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <AuthProvider client={supabaseClient} type="supabase">
         <ColorModeScript />
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <RedwoodApolloProvider>
             <Routes />
           </RedwoodApolloProvider>

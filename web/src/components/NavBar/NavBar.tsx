@@ -69,9 +69,9 @@ const MenuBar = () => {
         fontSize={'sm'}
         fontWeight={600}
         color={'white'}
-        bg={'pink.400'}
+        bg={'bungalook.500'}
         _hover={{
-          bg: 'pink.300',
+          bg: 'bungalook.300',
         }}
       >
         Sign In
@@ -114,7 +114,8 @@ export default function WithSubnavigation() {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
+            fontSize="lg"
+            color={useColorModeValue('bungalook.600', 'white')}
           >
             Bungalook
           </Text>
