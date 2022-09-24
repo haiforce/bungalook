@@ -20,7 +20,71 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  Avatar
 } from '@chakra-ui/react'
+import { Link as RwLink, routes } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
+
+const MenuBar = () => {
+  const { isAuthenticated, logOut, currentUser, client: supabase } = useAuth()
+
+  if (isAuthenticated) {
+    const { user_metadata: { full_name, avatar_url } } = supabase.auth.user()
+    return (
+      <>
+        <Button
+          as={'p'}
+          fontSize={'sm'}
+          fontWeight={400}
+          variant={'link'}
+        >
+          {full_name}
+        </Button>
+        <Menu>
+          <MenuButton
+            as={Button}
+            rounded={'full'}
+            variant={'link'}
+            cursor={'pointer'}
+            minW={0}>
+            <Avatar
+              size={'sm'}
+              src={
+                avatar_url
+              }
+            />
+          </MenuButton>
+          <MenuList>
+            <MenuItem>Profile</MenuItem>
+            <MenuDivider />
+            <MenuItem onClick={logOut}>Logout</MenuItem>
+          </MenuList>
+        </Menu>
+      </>
+    )
+  }
+  return (
+    <RwLink to={routes.signin()}>
+      <Button
+        display={{ base: 'none', md: 'inline-flex' }}
+        fontSize={'sm'}
+        fontWeight={600}
+        color={'white'}
+        bg={'pink.400'}
+        _hover={{
+          bg: 'pink.300',
+        }}
+      >
+        Sign In
+      </Button>
+    </RwLink>
+  )
+}
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure()
@@ -72,27 +136,7 @@ export default function WithSubnavigation() {
           direction={'row'}
           spacing={6}
         >
-          <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}
-          >
-            Sign In
-          </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            _hover={{
-              bg: 'pink.300',
-            }}
-          >
-            Sign Up
-          </Button>
+          <MenuBar />
         </Stack>
       </Flex>
 
