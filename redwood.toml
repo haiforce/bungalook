@@ -6,10 +6,10 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
-  title = "Bungalook Nursery"
+  title = "Bungalook"
   port = 8910
   apiUrl = "/.netlify/functions"
-  includeEnvironmentVariables = [] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
+  includeEnvironmentVariables = ["SUPABASE_URL", "SUPABASE_KEY"] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
 [api]
   port = 8911
 [browser]
