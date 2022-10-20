@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
       <NavBar />
       <Home />
-      <Service />
+      {/*  <Service /> */}
       <Footer />
     </>
   )

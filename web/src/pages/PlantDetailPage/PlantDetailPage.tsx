@@ -1,8 +1,8 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
-import NavBar from 'src/components/NavBar/NavBar'
-import Footer from 'src/components/Footer/Footer'
 
+import Footer from 'src/components/Footer/Footer'
+import NavBar from 'src/components/NavBar/NavBar'
 import PlantDetailCell from 'src/components/PlantDetail/PlantDetailCell'
 
 type PlantDetailPageProps = {
@@ -20,7 +20,6 @@ const PlantDetailPage = ({ id }: PlantDetailPageProps) => {
         <Footer />
       </div>
     </>
-
   )
 }
 

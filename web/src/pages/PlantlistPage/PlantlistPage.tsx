@@ -1,6 +1,6 @@
-import PlantsListCell from 'src/components/PlantsList/PlantsListCell'
-import NavBar from 'src/components/NavBar/NavBar'
 import Footer from 'src/components/Footer/Footer'
+import NavBar from 'src/components/NavBar/NavBar'
+import PlantsListCell from 'src/components/PlantsList/PlantsListCell'
 
 type PlantlistPageProps = {
   id: string

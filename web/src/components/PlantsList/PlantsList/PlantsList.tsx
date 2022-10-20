@@ -1,5 +1,3 @@
-import type { Collection, Plant } from 'types/graphql'
-import { Link, routes } from '@redwoodjs/router'
 import {
   Box,
   SimpleGrid,
@@ -9,13 +7,16 @@ import {
   Stack,
   Image,
 } from '@chakra-ui/react'
+import type { Collection, Plant } from 'types/graphql'
+
+import { Link, routes } from '@redwoodjs/router'
 
 const STATIC =
-  'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+  'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'
 
-
-const PlantCard = ({ detail, type }: { detail: Plant, type: string }) => {
-  const IMAGE = (detail.media && detail.media.length && detail.media[0]?.value) || STATIC
+const PlantCard = ({ detail, type }: { detail: Plant; type: string }) => {
+  const IMAGE =
+    (detail.media && detail.media.length && detail.media[0]?.value) || STATIC
   return (
     <Box
       role={'group'}
@@ -26,7 +27,8 @@ const PlantCard = ({ detail, type }: { detail: Plant, type: string }) => {
       boxShadow={'2xl'}
       rounded={'lg'}
       pos={'relative'}
-      zIndex={1}>
+      zIndex={1}
+    >
       <Box
         rounded={'lg'}
         mt={-12}
@@ -40,7 +42,7 @@ const PlantCard = ({ detail, type }: { detail: Plant, type: string }) => {
           pos: 'absolute',
           top: 5,
           left: 0,
-          backgroundImage: `url(${(IMAGE)})`,
+          backgroundImage: `url(${IMAGE})`,
           filter: 'blur(15px)',
           zIndex: -1,
         }}
@@ -48,7 +50,8 @@ const PlantCard = ({ detail, type }: { detail: Plant, type: string }) => {
           _after: {
             filter: 'blur(20px)',
           },
-        }}>
+        }}
+      >
         <Image
           rounded={'lg'}
           height={230}
@@ -61,7 +64,12 @@ const PlantCard = ({ detail, type }: { detail: Plant, type: string }) => {
         <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
           {type}
         </Text>
-        <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500} whiteSpace={'nowrap'}>
+        <Heading
+          fontSize={'2xl'}
+          fontFamily={'body'}
+          fontWeight={500}
+          whiteSpace={'nowrap'}
+        >
           {detail.name}
         </Heading>
         <Stack direction={'row'} align={'center'}>
@@ -79,7 +87,7 @@ const PlantCard = ({ detail, type }: { detail: Plant, type: string }) => {
 
 const PlantsList = ({ collection }: { collection: Collection }) => {
   return (
-    <SimpleGrid minChildWidth='300px' spacing='40px'>
+    <SimpleGrid minChildWidth="300px" spacing="40px">
       {collection.plants.map((plant, index) => {
         return <PlantCard detail={plant} type={collection.name} key={index} />
       })}
